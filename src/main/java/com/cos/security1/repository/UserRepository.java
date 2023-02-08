@@ -8,4 +8,8 @@ import com.cos.security1.model.User;
 // @Repository라는 어노테이션이 없어도 Ioc가 가능하다. JpaRepository를 상속했기때문에...
 public interface UserRepository extends JpaRepository<User,Long>{
 
+	// findBy규칙 ->Username문법
+	// JPQL : select u from User u where u.username =:username;
+	User findByUsername(String username);
+
 }
