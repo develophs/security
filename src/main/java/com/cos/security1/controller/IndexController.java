@@ -1,5 +1,7 @@
 package com.cos.security1.controller;
 
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -70,6 +72,20 @@ public class IndexController {
 	@GetMapping("/joinForm")
 	public String joinForm() {
 		return "joinForm";
+	}
+	
+	@Secured("ROLE_ADMIN")
+	@GetMapping("/info")
+	@ResponseBody
+	public String info() {
+		return "개인정보";
+	}
+	
+	@PreAuthorize("hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')")
+	@GetMapping("/data")
+	@ResponseBody
+	public String data() {
+		return "데이터";
 	}
 	
 	
