@@ -11,6 +11,7 @@ import com.cos.security1.repository.UserRepository;
 // 시큐리티 설정에서 loginProcessUrl("/login");
 // /login 요청이 오면 자동으로 UserDetailsService 타입으로 
 // IoC되어 있는 loadUserByUsername 메서스가 실행된다.
+
 @Service
 public class PricipalDetailsService implements UserDetailsService{
 

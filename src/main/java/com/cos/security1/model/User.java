@@ -25,6 +25,8 @@ public class User {
 	private String password;
 	private String email;
 	private String role; //ROLE_USER, ROLE_ADMIN
+	private String provider;//소셜로그인플랫폼
+	private String providerId;//소셜로그인 고유ID
 	@CreationTimestamp
 	private Timestamp createDate;
 
