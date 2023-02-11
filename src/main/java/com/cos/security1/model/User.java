@@ -12,10 +12,12 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
+@ToString
 public class User {
 	
 	@Id
